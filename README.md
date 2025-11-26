@@ -71,3 +71,21 @@ composer install
 php bin/magento setup:di:compile
 php bin/magento setup:static-content:deploy -f
 php bin/magento cache:flush
+
+**🔍 Install & Configure OpenSearch (Windows)1. Download OpenSearch Windows ZIP
+
+From: https://opensearch.org
+
+2. Extract and open config/opensearch.yml
+
+Add these lines:
+
+plugins.security.disabled: true
+discovery.type: single-node
+network.host: 127.0.0.1
+http.port: 9200
+3. Start OpenSearch
+
+Open PowerShell inside the OpenSearch folder:
+
+.\bin\opensearch.bat
