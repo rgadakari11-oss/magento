@@ -1,0 +1,86 @@
+# ===========================================================
+# Magento 2 Open Source — Recommended .gitignore
+# ===========================================================
+
+# -------------------------
+# IDE / System files
+# -------------------------
+.idea/
+.editorconfig
+.vscode/
+*.swp
+*.swo
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+# Magento Generated Files
+# -------------------------
+generated/
+pub/static/
+pub/media/
+var/
+var/cache/
+var/composer_home/
+var/page_cache/
+var/session/
+var/tmp/
+var/view_preprocessed/
+
+# -------------------------
+# Composer / PHP
+# -------------------------
+composer.lock     # optional — add if you want deterministic builds
+.phpunit.result.cache
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+var/log/
+var/report/
+
+# -------------------------
+# Node / Frontend
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+.pnp/
+.pnp.js
+
+
+# -------------------------
+# Package Archives
+# -------------------------
+*.zip
+*.tar.gz
+*.rar
+
+# -------------------------
+# Editor / Build Artifacts
+# -------------------------
+*.cache
+*.pid
+*.seed
+*.orig
+*.rej
+
+# -------------------------
+# Certificates / Secrets
+# -------------------------
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
+credentials.json
+
+# -------------------------
+# Optional: Git LFS (Uncomment if using)
+# -------------------------
+# pub/media/*

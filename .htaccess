@@ -1,0 +1,57 @@
+############################################
+## Magento 2 root .htaccess (redirect to /pub)
+############################################
+
+<IfModule mod_php7.c>
+    php_value memory_limit 756M
+</IfModule>
+
+<IfModule mod_php8.c>
+    php_value memory_limit 756M
+</IfModule>
+
+############################################
+## Prevent directory listing
+############################################
+Options +FollowSymLinks
+Options -Indexes
+
+############################################
+## Rewrite rules
+############################################
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+
+    # Don't rewrite these paths
+    RewriteCond %{REQUEST_URI} !^/pub/
+    RewriteCond %{REQUEST_URI} !^/setup/
+    RewriteCond %{REQUEST_URI} !^/update/
+    RewriteCond %{REQUEST_URI} !^/dev/
+
+    # Forward everything into /pub
+    RewriteRule ^(.*)$ pub/$1 [L]
+
+    DirectoryIndex index.php
+</IfModule>
+
+############################################
+## Default expiration for static files
+############################################
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+</IfModule>
+
+############################################
+## Deny access to sensitive files
+############################################
+<Files composer.json>
+    Order deny,allow
+    Deny from all
+</Files>
+
+<Files phpunit.xml>
+    Order deny,allow
+    Deny from all
+</Files>
