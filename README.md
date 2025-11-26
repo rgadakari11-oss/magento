@@ -89,3 +89,6 @@ http.port: 9200
 Open PowerShell inside the OpenSearch folder:
 
 .\bin\opensearch.bat
+
+--- Setup command 
+php bin/magento setup:install --base-url="http://localhost/magento2/" --db-host="localhost" --db-name="magento" --db-user="root" --db-password="" --admin-firstname="Admin" --admin-lastname="User" --admin-email="admin@example.com" --admin-user="admin" --admin-password="admin123" --search-engine=opensearch --opensearch-host="localhost" --opensearch-port="9200" --backend-frontname="admin"
